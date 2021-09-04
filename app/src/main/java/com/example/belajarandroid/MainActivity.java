@@ -7,14 +7,20 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
-    private Button buttonToIntent, buttonToBelajar, buttonBelajar2, buttonBelajar3;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat("hh : mm : ss");
+        String time = "waktu sekarang " + "\n" + format.format(calendar.getTime());
+        displayTime(time);
 
         int weekday = 5;
         int weekend = 9;
@@ -24,19 +30,29 @@ public class MainActivity extends AppCompatActivity {
         int solution = optimalHours - actualHours;
         display(solution);
 
-        buttonToIntent = (Button) findViewById(R.id.intent_to_basket_app);
+        Button buttonToIntent = (Button) findViewById(R.id.intent_to_basket_app);
         buttonToIntent.setOnClickListener(view -> clikButtonIntent());
 
-        buttonToBelajar = (Button) findViewById(R.id.intent_to_belajar1);
+        Button buttonToBelajar = (Button) findViewById(R.id.intent_to_belajar1);
         buttonToBelajar.setOnClickListener(view -> clikBelajarIntent());
 
-        buttonBelajar2 = (Button) findViewById(R.id.intent_to_belajar2);
+        Button buttonBelajar2 = (Button) findViewById(R.id.intent_to_belajar2);
         buttonBelajar2.setOnClickListener(view -> clikBelajarIntent2());
 
-        buttonBelajar3 = (Button) findViewById(R.id.intent_to_belajar3);
+        Button buttonBelajar3 = (Button) findViewById(R.id.intent_to_belajar3);
         buttonBelajar3.setOnClickListener(view -> clikBelajarIntet3());
 
+        Button buttonToJustJava = (Button) findViewById(R.id.intent_to_just_java);
+        buttonToJustJava.setOnClickListener(view -> clikJustJava());
+
+
     }
+
+    private void displayTime(String time) {
+        TextView displayTime = (TextView) findViewById(R.id.curent_time);
+        displayTime.setText("" + time);
+    }
+
 
     private void display(int solution) {
         TextView displayText = (TextView) findViewById(R.id.solution);
@@ -62,5 +78,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, belajar3.class);
         startActivity(intent);
     }
+
+    private void clikJustJava() {
+        Intent intent = new Intent(this, JustJava.class);
+        startActivity(intent);
+    }
+
 
 }
