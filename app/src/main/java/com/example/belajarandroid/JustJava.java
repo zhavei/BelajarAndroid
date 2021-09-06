@@ -213,4 +213,15 @@ public class JustJava extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    //takealone mapss to intent
+    public void takeAlone(View view) {
+        Uri takeAdress = Uri.parse("geo:-6.208286,106.746167?21=zoom");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, takeAdress);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
+    }
+
 }
