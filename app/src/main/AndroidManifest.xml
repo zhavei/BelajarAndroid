@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeBasket">
+        <activity android:name=".JustJava"></activity>
         <activity android:name=".belajar2" />
         <activity android:name=".belajar3" />
         <activity android:name=".BasketCourtActivity" />
