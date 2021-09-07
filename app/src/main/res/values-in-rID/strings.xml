@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BelajarAndroid</string>
+    <string name="name" translatable="false">Nama</string>
+    <string name="toppings">Toping</string>
+    <string name="whipped_cream">krim putih</string>
+    <string name="chocolate">cokelat</string>
+    <string name="quantity">Jumlah</string>
+    <string name="order">Pesan</string>
+    <string name="thank_you">Makasih</string>
+    <string name="order_summary_email_subject">Kopi Jawa Untuk</string>
+    <string name="order_summary">Kesimpulan Order</string>
+    <string name="initial_quantity_value">2</string>
+</resources>
